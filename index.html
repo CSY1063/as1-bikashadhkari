@@ -1,58 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
-        <title>Bikash Adhikari - Home</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Bikash Adhikari - Home</title>
+    <style>
+        /* Add this style for smaller screens */
+        @media only screen and (max-width: 600px) {
+            #menuButton {
+                display: block;
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                font-size: 1.5em;
+                background: none;
+                border: none;
+                color: #000; /* Adjust color */
+                cursor: pointer;
+            }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: fixed;
+                top: 60px; /* Adjust as needed */
+                right: 0;
+                width: 100%;
+                background-color: #fff; /* Adjust background color */
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                text-align: center;
+                margin: 10px 0;
+            }
+        }
+
+        /* Add this style to hide the button on larger screens */
+        @media only screen and (min-width: 601px) {
+            #menuButton {
+                display: none;
+            }
+        }
+    </style>
+</head>
 <body>
 
-    <header>
-        <div id="logo">
-            <!-- Replace 'logo.png' with the path to your logo image -->
-            <img src="https://flyclipart.com/thumb2/portfolio-dream-board-digital-186418.png" alt="Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="project.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="videoDemo.html">Video Demo</a></li>
-                <li><a href="sitereport.html">Site Report</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <div id="logo">
+        <!-- Replace 'logo.png' with the path to your logo image -->
+        <img src="https://flyclipart.com/thumb2/portfolio-dream-board-digital-186418.png" alt="Logo">
+    </div>
+    <button id="menuButton" onclick="toggleMenu()"> &#8801; </button>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="videoDemo.html">Video Demo</a></li>
+            <li><a href="sitereport.html">Site Report</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <section id="home" class="background-image">
-    <section id="home">
-        <div id="tagline">
-            Hi There<br>
-            I'm Bikash Adhikari
-        </div>
-        <button id="aboutMeButton">About Me</button>
-        <div id="aboutMeContent">
-            <p>My name is Bikash Adhikari, and as an Artificial Intelligence student, I've delved into the fascinating world of AI, honing my skills in developing intelligent systems and algorithms. Throughout my academic journey, I've had the opportunity to work on diverse AI projects encompassing natural language processing, computer vision, and machine learning.</p>
-    
-            <p>In these projects, I've engaged in tasks such as data preprocessing, model training, and performance evaluation, allowing me to gain practical insights into the intricacies of AI development. Additionally, I've collaborated with interdisciplinary teams to deploy AI solutions tailored to address real-world challenges, highlighting my ability to work effectively in dynamic environments.</p>
-    
-            <p>Through my experiences, I've cultivated a strong foundation in AI principles and methodologies, and I'm enthusiastic about leveraging my knowledge to drive innovation and make meaningful contributions in the field of Artificial Intelligence.</p>
-        </div>
-        <div id="profileImageContainer">
-            <img id="profileImage" src="photo.jpg" alt="Bikash Adhikari">
-        </div>
-    </section>
-    
-    <footer>
-        <p>&copy; 2024 Bikash Adhikari. All rights reserved.</p>
-    </footer>
-    
-    <script>
-        document.getElementById('aboutMeButton').addEventListener('click', function () {
-            var aboutMeContent = document.getElementById('aboutMeContent');
-            aboutMeContent.style.display = (aboutMeContent.style.display === 'none' || aboutMeContent.style.display === '') ? 'block' : 'none';
-        });
-    </script>
-    
+<section id="home" class="background-image">
+    <div id="tagline">
+        Hi There<br>
+        I'm Bikash Adhikari
+    </div>
+    <button id="aboutMeButton">About Me</button>
+    <div id="aboutMeContent">
+        <p>My name is Bikash Adhikari, and as an Artificial Intelligence student, I've delved into the fascinating world of AI, honing my skills in developing intelligent systems and algorithms. Throughout my academic journey, I've had the opportunity to work on diverse AI projects encompassing natural language processing, computer vision, and machine learning.</p>
+
+        <p>In these projects, I've engaged in tasks such as data preprocessing, model training, and performance evaluation, allowing me to gain practical insights into the intricacies of AI development. Additionally, I've collaborated with interdisciplinary teams to deploy AI solutions tailored to address real-world challenges, highlighting my ability to work effectively in dynamic environments.</p>
+
+        <p>Through my experiences, I've cultivated a strong foundation in AI principles and methodologies, and I'm enthusiastic about leveraging my knowledge to drive innovation and make meaningful contributions in the field of Artificial Intelligence.</p>
+    </div>
+    <div id="profileImageContainer">
+        <img id="profileImage" src="photo.jpg" alt="Bikash Adhikari">
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Bikash Adhikari. All rights reserved.</p>
+</footer>
+
+<script>
+    document.getElementById('aboutMeButton').addEventListener('click', function () {
+        var aboutMeContent = document.getElementById('aboutMeContent');
+        aboutMeContent.style.display = (aboutMeContent.style.display === 'none' || aboutMeContent.style.display === '') ? 'block' : 'none';
+    });
+
+    function toggleMenu() {
+        var nav = document.querySelector('nav ul');
+        nav.classList.toggle('show');
+    }
+</script>
+
 </body>
 </html>

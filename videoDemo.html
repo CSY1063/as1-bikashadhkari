@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Video Demo</title>
+    <style>
+        /* Add your additional styles here */
+        #menuButton {
+            display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            #menuButton {
+                display: block;
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                font-size: 1.5em;
+                background: none;
+                border: none;
+                color: #000; /* Adjust color */
+                cursor: pointer;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: fixed;
+                top: 60px; /* Adjust as needed */
+                right: 0;
+                width: 100%;
+                background-color: #fff; /* Adjust background color */
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                text-align: center;
+                margin: 10px 0;
+            }
+        }
+
+        @media screen and (min-width: 601px) {
+            #menuButton {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="logo">
+            <!-- Replace 'logo.png' with the path to your logo image -->
+            <img src="https://flyclipart.com/thumb2/portfolio-dream-board-digital-186418.png" alt="Logo">
+        </div>
+        <button id="menuButton" onclick="toggleMenu()"> &#8801; </button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="videoDemo.html">Video Demo</a></li>
+                <li><a href="sitereport.html">Site Report</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="video-demo" class="container">
+        <h2>My Project in Action</h2>
+        <p>Check out this video demonstration showcasing one of my projects.</p>
+
+        <!-- Replace the URL with the actual link or embed code for your video -->
+        <iframe id="kmsembed-0_9srkpsh7" width=" 640" height="420" src="https://mymedia.northampton.ac.uk/embed/secure/iframe/entryId/0_9srkpsh7/uiConfId/23453349/st/0" class="kmsembed" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" referrerPolicy="no-referrer-when-downgrade" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="WEBpage_DEMO"></iframe>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Bikash Adhikari. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var nav = document.querySelector('nav ul');
+            nav.classList.toggle('show');
+        }
+    </script>
+
+</body>
+</html>
